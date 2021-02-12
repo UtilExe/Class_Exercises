@@ -32,3 +32,14 @@ def copyToOtherFile(filename, array):
 
 readLinesToNumb('C:/Users/Emil/Desktop/Skole\Python/Materiale/docker_notebooks/notebooks/my_notebooks/02-Exercises-Extra/data.txt')
 copyToOtherFile('C:/Users/Emil/Desktop/Skole\Python/Materiale/docker_notebooks/notebooks/my_notebooks/02-Exercises-Extra/datanumbers.txt', intLines)
+
+# 3. create a function that can read all files in folder and all subfolders and print a list of all png files including their full path name
+print("Task 3: ")
+def readFolderPrintPng(path):
+    entries = os.listdir(path) #not sure how to get subfolders.
+
+    for entry in entries: 
+        full_path = os.path.join(path, entry) # for the full path name (not sure if correct)
+        if entry.endswith('.png'): # make sure we only print the ones containing png
+            print(entry, ",Path:",  full_path)
+readFolderPrintPng('C:/Users/Emil/Pictures/ta');
